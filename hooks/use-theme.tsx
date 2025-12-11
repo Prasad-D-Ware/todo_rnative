@@ -13,7 +13,7 @@ export interface ColorScheme {
     danger: string;
     shadow: string;
     gradients: {
-      background: [string, string];
+      background: [string, string, string];
       surface: [string, string];
       primary: [string, string];
       success: [string, string];
@@ -30,57 +30,63 @@ export interface ColorScheme {
   }
   
   const lightColors: ColorScheme = {
-    bg: "#f8fafc",
-    surface: "#ffffff",
+    bg: "#fff",
+    surface: "#fff",
     text: "#1e293b",
     textMuted: "#64748b",
-    border: "#e2e8f0",
-    primary: "#FE0000",
+    border: "transparent",
+    primary: "#000",
     success: "#10b981",
     warning: "#f59e0b",
     danger: "#ef4444",
     shadow: "#000000",
     gradients: {
-      background: ["#f8fafc", "#e2e8f0"],
-      surface: ["#ffffff", "#f8fafc"],
-      primary: ["#3b82f6", "#1d4ed8"],
+      background: ["#000", "#fff", "#fff"],
+      surface: [
+        "rgba(0,0,0,0.12)", // glassy dark overlay
+        "rgba(0,0,0,0.04)"
+      ],
+      primary: ["rgba(0,0,0,0.80)", "rgba(0,0,0,0.25)"],
       success: ["#10b981", "#059669"],
       warning: ["#f59e0b", "#d97706"],
       danger: ["#ef4444", "#dc2626"],
-      muted: ["#9ca3af", "#6b7280"],
-      empty: ["#f3f4f6", "#e5e7eb"],
+      muted: ["#e5e7eb", "#d1d5db"],
+      empty: ["#e5e7eb", "#d1d5db"],
     },
     backgrounds: {
-      input: "#ffffff",
-      editInput: "#ffffff",
+      input: "#fff",
+      editInput: "#fff",
     },
     statusBarStyle: "dark-content" as const,
   };
   
   const darkColors: ColorScheme = {
-    bg: "#0f172a",
+    bg: "#000",
     surface: "#000",
     text: "#f1f5f9",
     textMuted: "#94a3b8",
-    border: "#334155",
-    primary: "#FE0000",
+    border: "transparent",
+    primary: "#fff",
     success: "#34d399",
     warning: "#fbbf24",
     danger: "#f87171",
     shadow: "#000000",
     gradients: {
-      background: ["#0f172a", "#1e293b"],
-      surface: ["#1e293b", "#334155"],
-      primary: ["#3b82f6", "#1d4ed8"],
+      background: [ "#fff","#000","#000"],
+      surface: [
+        "rgba(255,255,255,0.25)", // glassy white overlay
+        "rgba(255,255,255,0.05)"
+      ],
+      primary: ["rgba(255,255,255,0.80)", "rgba(255,255,255,0.25)"],
       success: ["#10b981", "#059669"],
       warning: ["#f59e0b", "#d97706"],
       danger: ["#ef4444", "#dc2626"],
-      muted: ["#374151", "#4b5563"],
+      muted: ["#23272f", "#2d323c"],
       empty: ["#374151", "#4b5563"],
     },
     backgrounds: {
-      input: "#1e293b",
-      editInput: "#0f172a",
+      input: "#000000",
+      editInput: "#000000",
     },
     statusBarStyle: "light-content" as const,
   };
@@ -95,7 +101,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<undefined | ThemeContextType>(undefined)
 
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
   
     useEffect(() => {
       AsyncStorage.getItem("darkMode").then((value) => {
