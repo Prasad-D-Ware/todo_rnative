@@ -107,13 +107,13 @@ export default function Index() {
                                 },
                             ]}
                         >
-                            {item.isComplete && (
-                                <Ionicons
-                                    name="checkmark"
-                                    size={18}
-                                    color={"#fff"}
-                                />
-                            )}
+                             {item.isComplete && (
+                                 <Ionicons
+                                     name="checkmark"
+                                     size={18}
+                                     color={colors.primary}
+                                 />
+                             )}
                         </LinearGradient>
                     </TouchableOpacity>
 
@@ -124,10 +124,10 @@ export default function Index() {
                                 value={editText}
                                 onChangeText={setEditText}
                             />
-                            <View style={homeStyles.editButtons}>
-                                <TouchableOpacity style={[homeStyles.button,{borderColor : "green"}]} onPress={handleSaveTodo}>
-                                    <Text style={{color: "green"}} >Save</Text>
-                                </TouchableOpacity>
+                             <View style={homeStyles.editButtons}>
+                                 <TouchableOpacity style={[homeStyles.button,{borderColor : colors.success}]} onPress={handleSaveTodo}>
+                                     <Text style={{color: colors.success}} >Save</Text>
+                                 </TouchableOpacity>
                                 <TouchableOpacity style={homeStyles.button} onPress={handleCancelTodo}>
                                     <Text>Cancel</Text>
                                 </TouchableOpacity>
@@ -154,11 +154,11 @@ export default function Index() {
                                     <Text style={{color: colors.text}}>Edit</Text>
                                 </View>
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={()=>handleDeleteTodo(item._id)} activeOpacity={0.8} style={[homeStyles.button,{borderColor : "red"}]}>
-                                <View>
-                                    <Text style={{color: "red"}}>Delete</Text>
-                                </View>
-                            </TouchableOpacity>
+                             <TouchableOpacity onPress={()=>handleDeleteTodo(item._id)} activeOpacity={0.8} style={[homeStyles.button,{borderColor : colors.danger}]}>
+                                 <View>
+                                     <Text style={{color: colors.danger}}>Delete</Text>
+                                 </View>
+                             </TouchableOpacity>
                         </View>
                     </View>
                     )}
@@ -172,9 +172,9 @@ export default function Index() {
             <Svg style={[StyleSheet.absoluteFill]} pointerEvents="none">
                 <Defs>
                     <RadialGradient id="bg" cx="50%" cy="2%" r="100%" >
-                        <Stop offset="0%" stopColor="#ffffff" />
-                        <Stop offset="55%" stopColor="#000000" />
-                        <Stop offset="100%" stopColor="#000000" />
+                        <Stop offset="0%" stopColor={colors.gradients.background[0]} />
+                        <Stop offset="55%" stopColor={colors.gradients.background[1]} />
+                        <Stop offset="100%" stopColor={colors.gradients.background[2]} />
                     </RadialGradient>
                 </Defs>
                 <Rect width="100%" height="100%" fill="url(#bg)" />

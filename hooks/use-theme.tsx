@@ -40,8 +40,8 @@ export interface ColorScheme {
     warning: "#f59e0b",
     danger: "#ef4444",
     shadow: "#000000",
-    gradients: {
-      background: ["#000", "#fff", "#fff"],
+     gradients: {
+       background: ["#f8f9fa", "#e2e8f0", "#e2e8f0"],
       surface: [
         "rgba(0,0,0,0.12)", // glassy dark overlay
         "rgba(0,0,0,0.04)"

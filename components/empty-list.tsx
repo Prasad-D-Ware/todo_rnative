@@ -13,7 +13,7 @@ const EmptyState = () => {
   return (
     <View style={homeStyles.emptyContainer}>
       <LinearGradient colors={colors.gradients.primary} style={homeStyles.emptyIconContainer}>
-        <Ionicons name="clipboard-outline" size={60} color={"black"} />
+        <Ionicons name="clipboard-outline" size={60} color={colors.primary} />
       </LinearGradient>
       <Text style={homeStyles.emptyText}>No todos yet!</Text>
       <Text style={homeStyles.emptySubtext}>Add your first todo above to get started</Text>

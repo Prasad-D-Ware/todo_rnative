@@ -53,7 +53,7 @@ const TodoInput = () => {
                         }
                         style={[homeStyles.addButton]}
                     >
-                        <Ionicons name="add" size={24} color={"#fff"} />
+                        <Ionicons name="add" size={24} color={colors.primary} />
                     </LinearGradient>
                 </TouchableOpacity>
             </View>
