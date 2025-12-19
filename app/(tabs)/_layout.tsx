@@ -33,7 +33,9 @@ const TabLayout = () => {
     //     }}/>
 
     // </Tabs>
-    <NativeTabs>
+    <NativeTabs iconColor={{
+        selected: colors.success
+    }}>
         <NativeTabs.Trigger name="index">
             <Label >Todos</Label>
             <Icon sf={"checklist"} />
